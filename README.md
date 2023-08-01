@@ -37,3 +37,34 @@ echo "</PRE>";
 ```
 https://sergeypanteleev.com/ru/post/bitrix-ajax
 ```
+## Полезные команды для консоли
+
+#### поиск по содержимому файлов - получим список файлов с путями где встречается искомое слово или предложение.
+```
+grep -rl “что ищем”
+```
+
+#### Рекурсивное изменение прав
+```
+chmod -R 755 /home/bitrix/www/upload/disk
+```
+
+#### Владельца для  папок  и фалов что лежат в каталоге 
+
+```
+chown -R bitrix:bitrix /home/bitrix/www/upload/disk/
+```
+
+### API JS
+#### Подписаться на события битрикса (например - рендринг грида или канбана)
+```
+1.	Идешь \home\bitrix\www\bitrix\js\main\core\core.js
+2.	Через поиск ищешь function onCustomEvent
+3.	Вставляешь в функцию
+        console.log("Name:",eventName);
+        console.log("Params:",eventParams);
+        console.log("-----------------------");
+4.	 Ищешь нужное событие в консоле и подписываешься на него. Как подписаться смотри техдокументацию.
+
+```
+
